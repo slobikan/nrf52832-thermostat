@@ -1,0 +1,44 @@
+menu "AJAX KLIM"
+
+config AJAX_WIFI_SSID
+    string "Wi-Fi SSID"
+    default ""
+
+config AJAX_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default ""
+
+config AJAX_MQTT_URI
+    string "MQTT broker URI"
+    default "mqtt://192.168.1.10"
+
+config AJAX_MQTT_USERNAME
+    string "MQTT username"
+    default ""
+
+config AJAX_MQTT_PASSWORD
+    string "MQTT password"
+    default ""
+
+config AJAX_HA_DISCOVERY_PREFIX
+    string "Home Assistant discovery prefix"
+    default "homeassistant"
+
+config AJAX_DEVICE_NAME
+    string "Device name"
+    default "AJAX KLIM"
+
+config AJAX_NODE_ID
+    string "MQTT node id"
+    default "ajax_klim_esp32"
+
+config AJAX_ENABLE_UART
+    bool "Enable UART link to RX module"
+    default y
+
+config AJAX_UART_BAUD
+    int "UART baud rate"
+    range 9600 921600
+    default 115200
+
+endmenu

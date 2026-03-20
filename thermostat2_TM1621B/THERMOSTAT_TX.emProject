@@ -1,0 +1,63 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="THERMOSTAT_TX_TM1621B" target="8" version="2">
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 2"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 2 balanced" />
+  <project Name="THERMOSTAT_TX_TM1621B">
+    <configuration
+      Name="Common"
+      arm_architecture="v7EM"
+      arm_compiler_variant="SEGGER"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="SoftFP"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_linker_heap_size="512"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="SEGGER"
+      arm_target_device_name="nRF52832_xxAA"
+      arm_target_interface_type="SWD"
+      c_user_include_directories="$(ProjectDir)/include"
+      c_preprocessor_definitions="NRF52832_XXAA"
+      debug_target_connection="J-Link"
+      debug_stack_pointer_start="__stack_end__"
+      gcc_entry_point="Reset_Handler"
+      gcc_enable_all_warnings="Yes"
+      link_linker_script_file="$(ProjectDir)/Setup/SEGGER_Flash.icf"
+      linker_output_format="hex"
+      linker_section_placements_segments="FLASH1 RX 0x00000000 0x00080000;RAM1 RWX 0x20000000 0x00010000"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();" />
+    <configuration Name="Release" link_dedupe_code="Yes" />
+    <folder Name="Source">
+      <file file_name="src/common.c" />
+      <file file_name="src/radio_link.c" />
+      <file file_name="src/tm1621b.c" />
+      <file file_name="src/tx_main.c" />
+    </folder>
+    <folder Name="Headers">
+      <file file_name="include/common.h" />
+      <file file_name="include/nrf52832_regs.h" />
+      <file file_name="include/radio_link.h" />
+      <file file_name="include/tm1621b.h" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/Cortex_M_Startup.s" />
+      <file file_name="System/SEGGER_THUMB_Startup.s" />
+    </folder>
+    <folder Name="Setup">
+      <file file_name="Setup/SEGGER_Flash.icf" />
+    </folder>
+  </project>
+</solution>

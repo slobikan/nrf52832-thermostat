@@ -1,0 +1,42 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.log
+
+# Android
+android/.gradle/
+android/local.properties
+android/build/
+android/app/build/
+android/android-sdk/
+android/sdk-downloads/
+android/sdk-extract/
+
+# ESP32
+esp32/build/
+esp32/sdkconfig.old
+
+# nRF
+nrf/build/
+nrf/Output/
+nrf/tmp/
+nrf/backup/
+nrf/*.emSession
+thermostat2_TM1621B/build/
+thermostat2_TM1621B/Output/
+thermostat2_TM1621B/tmp/
+thermostat2_TM1621B/backup/
+thermostat2_TM1621B/*.emSession
+
+# Generic build artifacts
+*.o
+*.obj
+*.elf
+*.map
+*.hex
+*.bin
+*.d
+*.ind

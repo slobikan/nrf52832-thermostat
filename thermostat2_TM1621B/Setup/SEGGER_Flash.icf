@@ -1,0 +1,25 @@
+define memory with size = 4G;
+
+/* FIX #1: FLASH ограничен до 0x7F000 чтобы защитить страницы хранилища:
+ *   0x0007D000 — setpoint storage (tx_main.c)
+ *   0x0007F000 — pair record storage (common.c)
+ * Обе страницы (4KB каждая) исключены из области кода.
+ */
+define region FLASH = [from 0x00000000 to 0x0007CFFF];
+define region RAM   = RAM1;
+
+define block vectors { section .vectors };
+define block heap   with size = 0x200, alignment = 8 { };
+define block stack  with size = 0x800, alignment = 8 { };
+
+do not initialize { section .non_init, section .non_init.*, section .noinit, section .noinit.* };
+initialize by copy { section .data, section .data.*, section .fast, section .fast.* };
+
+place at start of FLASH { block vectors };
+place in FLASH { readonly, readexec };
+
+place in RAM with auto order { readwrite, zeroinit };
+place in RAM { block heap };
+place at end of RAM { block stack };
+
+define symbol __stack_end__ = end of block stack;

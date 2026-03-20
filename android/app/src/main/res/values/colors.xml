@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="storm_950">#07141F</color>
+    <color name="storm_900">#102435</color>
+    <color name="panel_900">#12293D</color>
+    <color name="panel_850">#18334B</color>
+    <color name="panel_800">#1C3952</color>
+    <color name="panel_700">#244966</color>
+    <color name="panel_stroke">#345A78</color>
+    <color name="brand_orange_400">#F56D31</color>
+    <color name="brand_orange_300">#FF8F45</color>
+    <color name="brand_orange_100">#FFD9C2</color>
+    <color name="brand_teal_400">#52B7D2</color>
+    <color name="brand_teal_300">#7ACCE0</color>
+    <color name="brand_teal_100">#C9EEF7</color>
+    <color name="frost_200">#9FCBDD</color>
+    <color name="frost_100">#C8E1EC</color>
+    <color name="frost_050">#F4FBFF</color>
+    <color name="success_green">#4FD08E</color>
+    <color name="warning_gold">#F2B84B</color>
+    <color name="alert_rose">#E36B78</color>
+</resources>
